@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href="https://ais.yunyoujun.cn" target="_blank" rel="noopener noreferrer"><img width="100" src="https://raw.githubusercontent.com/YunYouJun/elementw/master/src/assets/images/element-logo-small.png" alt="AIS Logo"></a>
+  <a href="https://ais.yunyoujun.cn" target="_blank" rel="noopener noreferrer"><img width="100" src="https://raw.githubusercontent.com/YunYouJun/ais.js/master/src/assets/anchor.png" alt="AIS Logo"></a>
   <h1 align="center">ais-json</h1>
 </p>
 
