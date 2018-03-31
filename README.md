@@ -1,3 +1,18 @@
+
+<p align="center">
+  <a href="https://ais.yunyoujun.cn" target="_blank" rel="noopener noreferrer"><img width="100" src="https://raw.githubusercontent.com/YunYouJun/elementw/master/src/assets/images/element-logo-small.png" alt="AIS Logo"></a>
+  <h1 align="center">ais-json</h1>
+</p>
+
+<p align="center">
+  <a href="https://npmcharts.com/compare/ais-json?minimal=true"><img src="https://img.shields.io/npm/dt/ais-json.svg" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/ais-json"><img src="https://img.shields.io/npm/v/ais-json.svg" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/ais-json"><img src="https://img.shields.io/npm/l/ais-json.svg" alt="License"></a>
+  <a href="http://img.badgesize.io/https://unpkg.com/ais-json?compression=gzip&label=gzip%20size:%20CSS">
+    <img src="http://img.badgesize.io/https://unpkg.com/ais-json?compression=gzip&label=gzip%20size:%20CSS">
+  </a>
+</p>
+
 # ais-json
 
 A npm package about AIS (Automatic Identification System) text decoding.
@@ -28,12 +43,7 @@ npm install ais-json
 ## Decode AIS Text
 ```
 const ais = require('ais-json')
-let aisinfo = ais(text)
-```
-
-AIS Text Example : 
-```
-!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D
+let aisinfo = ais('!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D')
 ```
 
 ## Open SerialPort
@@ -42,7 +52,9 @@ cd ais-json
 node serialport
 ```
 ### Default
+
 Port: COM3
+
 BaudRate: 38400
 
 ## Encode Table
