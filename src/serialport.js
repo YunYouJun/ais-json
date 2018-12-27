@@ -62,6 +62,5 @@ function saveAisText (aisText) {
 
 // saveAisText('!AIVDM,1,1,,B,16:=hkP0018eSa:AaN;cb`Kh0@QE,0*61')
 // saveAisText('!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D')
-// // saveAisText('!AIVDO,1,1,,,168rO000008;Mp:APith06RP0000,0*25')
 // saveAisText('!AIVDO,1,1,,,168rO000008;Mp:APith06RP0000,0*25')
 // saveAisText('!AIVDM,1,1,,A,<68rO0IR>Wh0J8?EP@5>70,4*23')

@@ -36,7 +36,8 @@ function verifyAIS (text) {
   return true
 }
 
-module.exports = function (text) {
+// main
+function ais(text) {
   console.log('Hello, ais.js!')
   if (!verifyAIS(text)) {
     return false
@@ -52,4 +53,12 @@ module.exports = function (text) {
   let info = decodeMessage(bitMessage)
   info.text = text
   return info
+}
+
+module.exports = ais
+
+// node ./src/index.js '!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D'
+let aisText = process.argv.splice(2)[0]
+if (aisText) {
+  console.log(ais(aisText))
 }
