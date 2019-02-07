@@ -1,14 +1,14 @@
 {
   "name": "ais-json",
   "version": "0.1.0",
-  "description": "AIS.js",
+  "description": "AIS.js Lib",
   "main": "dist/ais-json.cjs.js",
   "module": "dist/ais-json.esm.js",
   "browser": "dist/ais-json.umd.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "node test",
+    "test": "jest",
     "pretest": "npm run build"
   },
   "files": [
@@ -16,25 +16,27 @@
   ],
   "keywords": [
     "ais",
-    "json"
+    "json",
+    "lib"
   ],
   "author": "YunYouJun",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YunYouJun/ais-json.git"
-  },
+  "repository": "git+https://github.com/YunYouJun/ais-json.git",
   "bugs": {
     "url": "https://github.com/YunYouJun/ais-json/issues"
   },
   "homepage": "https://github.com/YunYouJun/ais-json#readme",
-  "dependencies": {
-    "serialport": "^6.0.4"
-  },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "jest": "^24.1.0",
     "rollup": "^1.1.2",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-json": "^3.1.0",
-    "rollup-plugin-node-resolve": "^4.0.0"
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^4.0.4"
+  },
+  "dependencies": {
+    "serialport": "^7.1.4"
   }
 }

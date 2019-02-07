@@ -1,5 +1,4 @@
-// import num2char from './num2char.json'
-const num2char = require('./num2char.json')
+import num2char from './num2char.json'
 
 // 二进制转经纬度 (字母)
 function bit2coordinate (bitLongitude, bitLatitude) {
@@ -455,8 +454,7 @@ function safeConfirm (bitMessage) {
 }
 
 // 解码封装信息
-// export function decodeMessage (bitMessage) {
-module.exports.decodeMessage = function (bitMessage) {
+export function decodeMessage (bitMessage) {
   let info = {}
   let id = parseInt(bitMessage.slice(0, 6), 2) // Identifier for this message
   info = classifyID(id, bitMessage) // 分类消息 进行不同处理

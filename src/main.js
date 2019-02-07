@@ -52,10 +52,10 @@ function ais(text) {
   return info
 }
 
-module.exports = ais
-
-// node ./src/index.js '!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D'
+// console result by cli
 let aisText = process.argv.splice(2)[0]
 if (aisText) {
   console.log(ais(aisText))
 }
+
+export default ais
