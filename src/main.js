@@ -1,7 +1,5 @@
-// import ascii6bit from './ascii6bit.json'
-// import { decodeMessage } from './decode.js'
-const ascii6bit = require('./ascii6bit.json')
-const decodeMessage = require('./decode.js').decodeMessage
+import ascii6bit from './ascii6bit.json'
+import { decodeMessage } from './decode.js'
 
 // 信息转为二进制编码 （使用 6 bit ASCII 码表）
 function message2bit (message) {
@@ -38,7 +36,6 @@ function verifyAIS (text) {
 
 // main
 function ais(text) {
-  console.log('Hello, ais.js!')
   if (!verifyAIS(text)) {
     return false
   }

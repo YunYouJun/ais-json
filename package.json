@@ -2,18 +2,24 @@
   "name": "ais-json",
   "version": "0.1.0",
   "description": "AIS.js",
-  "main": "dist/ais-json.js",
+  "main": "dist/ais-json.cjs.js",
+  "module": "dist/ais-json.esm.js",
+  "browser": "dist/ais-json.umd.js",
   "scripts": {
-    "build": "webpack",
-    "postbuild": "npm run test",
-    "test": "node ./test"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test",
+    "pretest": "npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "ais",
     "json"
   ],
   "author": "YunYouJun",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YunYouJun/ais-json.git"
@@ -26,7 +32,9 @@
     "serialport": "^6.0.4"
   },
   "devDependencies": {
-    "webpack": "^4.28.2",
-    "webpack-cli": "^3.1.2"
+    "rollup": "^1.1.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0"
   }
 }

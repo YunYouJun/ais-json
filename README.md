@@ -90,7 +90,7 @@ node serialport
 
 #### Default
 
-Port: COM3
+Port: COM3  
 BaudRate: 38400
 
 ### Encode Table
