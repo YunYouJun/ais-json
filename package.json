@@ -1,10 +1,13 @@
 {
   "name": "ais-json",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "AIS.js Lib",
   "main": "dist/ais-json.cjs.js",
   "module": "dist/ais-json.esm.js",
   "browser": "dist/ais-json.umd.js",
+  "bin": {
+    "ais": "bin/cli.js"
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -12,6 +15,7 @@
     "pretest": "npm run build"
   },
   "files": [
+    "bin",
     "dist"
   ],
   "keywords": [
@@ -31,12 +35,10 @@
     "@babel/preset-env": "^7.3.1",
     "jest": "^24.1.0",
     "rollup": "^1.1.2",
-    "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-json": "^3.1.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-terser": "^4.0.4"
   },
-  "dependencies": {
+  "peerDependencies": {
     "serialport": "^7.1.4"
   }
 }

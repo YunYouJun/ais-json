@@ -52,10 +52,4 @@ function ais(text) {
   return info
 }
 
-// console result by cli
-let aisText = process.argv.splice(2)[0]
-if (aisText) {
-  console.log(ais(aisText))
-}
-
 export default ais
