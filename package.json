@@ -1,6 +1,6 @@
 {
   "name": "ais-json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AIS.js Lib",
   "main": "dist/ais-json.cjs.js",
   "module": "dist/ais-json.esm.js",
