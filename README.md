@@ -119,7 +119,7 @@ Then, you will get:
 ### Import
 
 ```js
-# const ais = require('ais-json')
+// const ais = require('ais-json')
 import ais from 'ais-json'
 ```
 
@@ -127,6 +127,7 @@ import ais from 'ais-json'
 
 ```js
 // default is en
+// locales: [en, cn]
 ais.setLocale('cn')
 ```
 

@@ -4,5 +4,5 @@
 const ais = require('..')
 let aisText = process.argv.splice(2)[0]
 if (aisText) {
-  console.log(ais(aisText))
+  console.log(ais.parse(aisText))
 }

@@ -2,10 +2,6 @@ import ais from '..'
 import cn from '../src/locales/cn.json'
 import result from './result.json'
 
-test('Basic Info', () => {
-  console.log(ais.version)
-})
-
 test('i18n: cn', () => {
   ais.setLocale('cn')
   expect(ais.i18n.__('AIS')).toEqual(cn.AIS)
