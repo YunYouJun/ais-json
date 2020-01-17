@@ -1,4 +1,4 @@
-import json from 'rollup-plugin-json'
+import json from '@rollup/plugin-json'
 // minify
 import { terser } from "rollup-plugin-terser"
 import pkg from './package.json'

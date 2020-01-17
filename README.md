@@ -42,7 +42,7 @@ npm install ais-json
 ## In Terminal
 
 ```sh
-npx ais '!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D'
+npx ais-json '!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D'
 ```
 
 Then, you will get:
