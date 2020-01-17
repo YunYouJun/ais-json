@@ -1,4 +1,5 @@
 import num2char from './num2char.json'
+import { __ } from 'i18n'
 
 // 二进制转经纬度 (字母)
 function bit2coordinate (bitLongitude, bitLatitude) {
@@ -66,25 +67,25 @@ function classifyID (id, bitMessage) {
       type = positionReport(bitMessage)
       break
     case 4:
-      type = '基站报告'
+      type = __('Base Station Report')
       break
     case 5:
-      type = '静态、航行相关数据'
+      type = __('Static, Navigation-related Data')
       break
     case 10:
-      type = 'UTC/日期响应'
+      type = __('UTC/Date Response')
       break
     case 11:
-      type = '申请安全相关信息'
+      type = __('Apply for safety related information')
       break
     case 12:
       type = safeConfirm(bitMessage)
       break
     case 13:
-      type = '安全广播信息'
+      type = __('Broadcast information')
       break
     default:
-      type = '无该分类信息'
+      type = __('No such information')
   }
   return type
 }
@@ -93,11 +94,11 @@ function classifyID (id, bitMessage) {
 function classifyIndicator (indicator) {
   let type = ''
   if (indicator === 0) {
-    type = __('default')
+    type = __('Default')
   } else if (indicator === 3) {
-    type = __('NoLongerForward')
+    type = __('No Longer Transmit')
   } else {
-    type = __('indicator.TransmitTimes') + ': ' + indicator
+    type = __('Transmit Times') + ': ' + indicator
   }
   return type
 }
@@ -107,51 +108,51 @@ function classifyNaviStatus (naviStatus) {
   let type = ''
   switch (naviStatus) {
     case 0:
-      type = __('status.EngineInUse')
+      type = __('Engine In Use')
       break
     case 1:
-      type = __('status.Anchor')
+      type = __('At Anchor')
       break
     case 2:
-      type = '未操纵'
+      type = __('Not manipulated')
       break
     case 3:
-      type = '有限适航性'
+      type = __('Limited airworthiness')
       break
     case 4:
-      type = '受船舶吃水限制'
+      type = __('Limited by ship draft')
       break
     case 5:
-      type = '系泊'
+      type = __('Moored')
       break
     case 6:
-      type = '搁浅'
+      type = __('Stranded')
       break
     case 7:
-      type = '从事捕捞'
+      type = __('Engage In Fishing')
       break
     case 8:
-      type = '航行中'
+      type = __('During Voyage')
       break
     case 9:
-      type = '留做将来修正导航状态，用于载运危险品（DG）、有害物质（HS）或海洋污染物（MP）的船舶，或载运 IMO 的C类危险品或污染物、高速船（HSC）'
+      type = __('Reserved for future correction of navigation status for ships carrying dangerous goods (DG), hazardous substances (HS) or marine pollutants (MP), or carrying IMO Class C dangerous goods or pollutants, high-speed ships (HSC)')
       break
     case 10:
-      type = '留做将来修正导航状态，用于载运DG、HS或MP，或载运IMO的A类危险品或污染物的船舶，WIG'
+      type = __('Reserved for future amendment of navigational status for ships carrying dangerous goods (DG), harmful substances (HS) or marine pollutants (MP), or IMO hazard or pollutant category A, wing in ground (WIG)')
       break
     case 11:
     case 12:
     case 13:
-      type = '留做将来用'
+      type = __('Reserved for future use')
       break
     case 14:
-      type = 'AIS-SART（Search and Rescue Radar Transponder）（现行的）'
+      type = __('AIS-SART (Search and Rescue Radar Transponder)')
       break
     case 15:
-      type = '未规定/默认值'
+      type = __('Default')
       break
     default:
-      type = '无该分类信息'
+      type = __('No Info')
   }
   return type
 }
@@ -160,9 +161,9 @@ function classifyNaviStatus (naviStatus) {
 function classifyAccuracy (accuracy) {
   let type = ''
   if (accuracy === '0') {
-    type = '低(>10m)'
+    type = __('Low(>10m)')
   } else {
-    type = '高(<10m)'
+    type = __('High(<10m)')
   }
   return type
 }
@@ -173,13 +174,13 @@ function classifySecond (second) {
   if (second < 60) {
     type = second + ' seconds past the minute'
   } else if (second === 60) {
-    type = '不可用'
+    type = __('Unavailable')
   } else if (second === 61) {
-    type = '定位系统在人工输入模式下'
+    type = __('Positioning system in manual input mode')
   } else if (second === 62) {
-    type = '电子定位系统工作在估计（航迹推算）模式下'
+    type = __('Electronic positioning system works in estimation (track estimation) mode')
   } else if (second === 63) {
-    type = '定位系统不起作用'
+    type = __('Positioning system does not work"')
   }
   return type
 }
@@ -188,11 +189,11 @@ function classifySecond (second) {
 function classifyRegionalApplication (regionalApplication) {
   let type = ''
   if (regionalApplication === 0) {
-    type = '不可用'
+    type = __('Unavailable')
   } else if (regionalApplication === 1) {
-    type = '未进行特定操纵'
+    type = __('No specific manipulation')
   } else if (regionalApplication === 2) {
-    type = '进行特定操纵'
+    type = __('Specific manipulation')
   }
   return type
 }
@@ -201,7 +202,7 @@ function classifyRegionalApplication (regionalApplication) {
 function classifySpare (spare) {
   let type = ''
   if (spare === 0) {
-    type = '未使用'
+    type = __('Unused')
   }
   return type
 }
@@ -210,9 +211,9 @@ function classifySpare (spare) {
 function classifyRAIM (RAIM) {
   let type = ''
   if (RAIM === 0) {
-    type = 'RAIM未使用'
+    type = __('Unused')
   } else if (RAIM === 1) {
-    type = 'RAIM正在使用'
+    type = __('In Use')
   }
   return type
 }
@@ -258,7 +259,7 @@ function positionReport (bitMessage) {
 
   let rate = 4.733 * Math.sqrt(parseInt(bitMessage.slice(42, 50), 2)) + '°/min'// Rate of turn，00000000=0
 
-  let sog = parseInt(bitMessage.slice(50, 60), 2) / 10 + '节' // Speed over ground，0000000000 = 0
+  let sog = parseInt(bitMessage.slice(50, 60), 2) / 10 + __('Knot') // Speed over ground，0000000000 = 0
 
   let accuracy = parseInt(bitMessage.slice(60, 61), 2) // Position accuracy, 0=LOW
   let accuracyType = classifyAccuracy(accuracy)
@@ -288,7 +289,7 @@ function positionReport (bitMessage) {
   info = {
     'MessageID': {
       data: id,
-      info: '船位报告'
+      info: __('Ship Position Report')
     },
     'DataIndicator': {
       data: indicator,

@@ -52,11 +52,11 @@ Then, you will get:
 {
   "MessageID": {
     "data": 1,
-    "info": "船位报告"
+    "info": "Ship Position Report"
   },
   "DataIndicator": {
     "data": 0,
-    "info": "默认"
+    "info": "Default"
   },
   "UserID": {
     "data": 356248000,
@@ -64,19 +64,19 @@ Then, you will get:
   },
   "NaviStatus": {
     "data": 0,
-    "info": "发动机使用中"
+    "info": "Engine In Use"
   },
   "ROT": {
     "data": "0°/min",
     "info": "0°/min"
   },
   "SOG": {
-    "data": "0节",
-    "info": "0节"
+    "data": "0Knot",
+    "info": "0Knot"
   },
   "Accuracy": {
     "data": 0,
-    "info": "高(<10m)"
+    "info": "High(<10m)"
   },
   "Location": {
     "data": [118.07354333333333, 24.502496666666666],
@@ -96,15 +96,15 @@ Then, you will get:
   },
   "RegionalApplication": {
     "data": 0,
-    "info": "不可用"
+    "info": "Unavailable"
   },
   "Spare": {
     "data": 0,
-    "info": "未使用"
+    "info": "Unused"
   },
   "RAIM": {
     "data": 0,
-    "info": "RAIM未使用"
+    "info": "Unused"
   },
   "CommunicationState": {
     "data": "0000000100011100101",
@@ -116,11 +116,23 @@ Then, you will get:
 
 ## In Project
 
-### Decode AIS Text
+### Import
 
-```sh
+```js
 # const ais = require('ais-json')
 import ais from 'ais-json'
+```
+
+### Set Language
+
+```js
+// default is en
+ais.setLocale('cn')
+```
+
+### Decode AIS Text
+
+```js
 let aisinfo = ais.parse('!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D')
 ```
 
@@ -151,4 +163,4 @@ Generate `ascii6bit.json` and `num2char.json`.
 
 ## Intend
 
-- [ ] CLI
+- [ ] Release 0.2.0

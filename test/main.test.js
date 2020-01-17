@@ -1,6 +1,6 @@
 import ais from '..'
 import cn from '../src/locales/cn.json'
-import result from './result-with-name.json'
+import result from './result.json'
 
 test('Basic Info', () => {
   console.log(ais.version)
@@ -13,6 +13,6 @@ test('i18n: cn', () => {
 
 test('Decode ais text', () => {
   let aisinfo = ais.parse('!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D')
-  // console.log(aisinfo)
-  // expect(aisinfo).toEqual(result)
+  console.log(aisinfo)
+  expect(aisinfo).toEqual(result)
 })
