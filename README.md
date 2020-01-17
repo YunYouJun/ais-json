@@ -15,6 +15,8 @@
 
 # ais-json
 
+[![Build Status](https://travis-ci.com/YunYouJun/ais-json.svg?branch=master)](https://travis-ci.com/YunYouJun/ais-json)
+
 A npm package about AIS (Automatic Identification System) text decoding.
 
 Decode AIS text, then return JSON object.
