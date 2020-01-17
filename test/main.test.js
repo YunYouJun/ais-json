@@ -1,7 +1,18 @@
-const ais = require('..')
-const result = require('./result.json')
+import ais from '..'
+import cn from '../src/locales/cn.json'
+import result from './result-with-name.json'
 
-test('decode ais text: example 1', () => {
-  let aisinfo = ais('!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D')
-  expect(aisinfo).toEqual(result);
+test('Basic Info', () => {
+  console.log(ais.version)
+})
+
+test('i18n: cn', () => {
+  ais.setLocale('cn')
+  expect(ais.i18n.__('AIS')).toEqual(cn.AIS)
+})
+
+test('Decode ais text', () => {
+  let aisinfo = ais.parse('!AIVDM,1,1,,A,15Cgah00008LOnt>1Cf`s6NT00SU,0*3D')
+  // console.log(aisinfo)
+  // expect(aisinfo).toEqual(result)
 })

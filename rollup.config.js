@@ -11,7 +11,8 @@ export default [
       { name: pkg.name, file: pkg.browser, format: 'cjs' },
       { file: pkg.main, format: 'cjs' },
 			{ file: pkg.module, format: 'es' }
-    ],
+		],
+		external: [ 'i18n' ],
 		plugins: [
       json(),
 			terser()

@@ -1,5 +1,7 @@
+import i18n from './i18n'
 import ascii6bit from './ascii6bit.json'
 import { decodeMessage } from './decode.js'
+import pkg from '../package.json'
 
 // 信息转为二进制编码 （使用 6 bit ASCII 码表）
 function message2bit (message) {
@@ -25,8 +27,17 @@ function divideAIS (text) {
   return infoFrame
 }
 
-// AIS 校验函数
-function verifyAIS (text) {
+let ais = {}
+ais.version = pkg.version
+ais.i18n = i18n
+
+// set language
+ais.setLocale = function setLocale(lang) {
+  i18n.setLocale(lang)
+}
+
+// verify ais
+ais.verify = function verify(text) {
   let frame = text.toString().split(',')
   if (frame.length < 7) {
     return false
@@ -34,9 +45,9 @@ function verifyAIS (text) {
   return true
 }
 
-// main
-function ais(text) {
-  if (!verifyAIS(text)) {
+// parse ais text
+ais.parse = function parse(text) {
+  if (!ais.verify(text)) {
     return false
   }
   let frame = divideAIS(text)
@@ -52,4 +63,6 @@ function ais(text) {
   return info
 }
 
+// main
+// export instance
 export default ais

@@ -6,7 +6,7 @@
   "module": "dist/ais-json.esm.js",
   "browser": "dist/ais-json.umd.js",
   "bin": {
-    "ais": "bin/cli.js"
+    "ais-json": "bin/cli.js"
   },
   "scripts": {
     "build": "rollup -c",
@@ -40,5 +40,8 @@
   },
   "peerDependencies": {
     "serialport": "8.x"
+  },
+  "dependencies": {
+    "i18n": "^0.8.4"
   }
 }

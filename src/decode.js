@@ -93,11 +93,11 @@ function classifyID (id, bitMessage) {
 function classifyIndicator (indicator) {
   let type = ''
   if (indicator === 0) {
-    type = '默认'
+    type = __('default')
   } else if (indicator === 3) {
-    type = '不再转发'
+    type = __('NoLongerForward')
   } else {
-    type = '转发了' + indicator + '次'
+    type = __('indicator.TransmitTimes') + ': ' + indicator
   }
   return type
 }
@@ -107,10 +107,10 @@ function classifyNaviStatus (naviStatus) {
   let type = ''
   switch (naviStatus) {
     case 0:
-      type = '发动机使用中'
+      type = __('status.EngineInUse')
       break
     case 1:
-      type = '锚泊'
+      type = __('status.Anchor')
       break
     case 2:
       type = '未操纵'
@@ -287,77 +287,62 @@ function positionReport (bitMessage) {
 
   info = {
     'MessageID': {
-      name: '消息ID',
       data: id,
       info: '船位报告'
     },
     'DataIndicator': {
-      name: '转发指示符',
       data: indicator,
       info: indicatorType
     },
     'UserID': {
-      name: '用户ID(MMSI)',
       data: MMSI,
       info: MMSI
     },
     'NaviStatus': {
-      name: '导航状态',
       data: naviStatus,
       info: naviStatusType
     },
     'ROT': {
-      name: '旋转速率',
       data: rate,
       info: rate
     },
     'SOG': {
-      name: '地面航速',
       data: sog,
       info: sog
     },
     'Accuracy': {
-      name: '地面航速',
       data: accuracy,
       info: accuracyType
     },
     'Location': {
-      name: '坐标',
       data: coordinateData,
       info: coordinateInfo
     },
     'COG': {
-      name: '地面航线',
       data: cog,
       info: cog
     },
     'Heading': {
-      name: '实际航向',
       data: heading,
       info: heading
     },
     'Second': {
-      name: '时戳',
       data: second,
       info: secondType
     },
     'RegionalApplication': {
-      name: '特定操纵指示符',
       data: regionalApplication,
       info: regionalApplicationType
     },
     'Spare': {
-      name: '备用',
       data: spare,
       info: spareType
     },
     'RAIM': {
-      name: 'RAIM',
       data: RAIM,
       info: RAIMType
     },
     'CommunicationState': {
-      name: '通信状态',
       data: cState,
       info: cStateType
     }
@@ -369,9 +354,9 @@ function positionReport (bitMessage) {
 function classifyRepeatFlag (RepeatFlag) {
   let type = ''
   if (RepeatFlag === 0) {
-    type = '无重复发送'
+    type = __('NoDuplicateSending')
   } else if (RepeatFlag === 1) {
-    type = '重发'
+    type = __('Resend')
   }
   return type
 }
@@ -410,42 +395,34 @@ function safeConfirm (bitMessage) {
 
   info = {
     'MessageID': {
-      name: '消息ID',
       data: id,
       info: '安全相关确认'
     },
     'DataIndicator': {
-      name: '转发指示符',
       data: indicator,
       info: indicatorType
     },
     'SourceID': {
-      name: '信源ID',
       data: SourceID,
       info: SourceID
     },
     'SerialID': {
-      name: '序列编号',
       data: SerialNo,
       info: SerialNo
     },
     'DestinationID': {
-      name: '目的地ID',
       data: DestID,
       info: DestID
     },
     'RepeatFlag': {
-      name: '重发标志',
       data: RepeatFlag,
       info: RepeatFlagType
     },
     'Spare': {
-      name: '备用',
       data: spare,
       info: spareType
     },
     'SecureText': {
-      name: '安全相关文本',
       data: SecureText,
       info: SecureTextInfo
     }
