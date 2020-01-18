@@ -7,10 +7,10 @@
 <p align="center">
   <a href="https://npmcharts.com/compare/ais-json?minimal=true"><img src="https://img.shields.io/npm/dt/ais-json.svg" alt="Downloads"></a>
   <a href="https://www.npmjs.com/package/ais-json"><img src="https://img.shields.io/npm/v/ais-json.svg" alt="Version"></a>
-  <a href="https://www.npmjs.com/package/ais-json"><img src="https://img.shields.io/npm/l/ais-json.svg" alt="License"></a>
-  <a href="http://img.badgesize.io/https://unpkg.com/ais-json?compression=gzip&label=gzip%20size:%20CSS">
-    <img src="http://img.badgesize.io/https://unpkg.com/ais-json?compression=gzip&label=gzip%20size:%20CSS">
+  <a href="https://unpkg.com/ais-json">
+    <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/ais-json">
   </a>
+  <a href="https://www.npmjs.com/package/ais-json"><img src="https://img.shields.io/npm/l/ais-json.svg" alt="License"></a>
 </p>
 
 # ais-json
@@ -22,6 +22,7 @@ A npm package about AIS (Automatic Identification System) text decoding.
 Decode AIS text, then return JSON object.
 
 npm address: <https://www.npmjs.com/package/ais-json>
+
 Online test: <https://ais.js.org>
 
 ## Structure
